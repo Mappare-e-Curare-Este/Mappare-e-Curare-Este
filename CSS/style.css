@@ -32,16 +32,16 @@ html, body {
   transition: background-color 0.3s ease;
 }
 #menuButton:hover {
-  background-color: rgba(0, 120, 0, 0.8);
+  background-color: #007800cc;
 }
 
 /* --- Stili per il pulsante GPS --- */
 #gpsButton {
   position: absolute;
-  top: 70px; /* Sposta sotto il menuButton (top: 20px) */
-  right: 20px;
+  bottom: 70px;
+  left: 20px;
   z-index: 10000;
-  background-color: #007bff; /* Blu per il GPS */
+  background-color: #007800cc;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -52,7 +52,7 @@ html, body {
   transition: background-color 0.3s ease;
 }
 #gpsButton:hover {
-  background-color: #0056b3;
+  background-color: #014d01cc;
 }
 
 #treeListMenu {
