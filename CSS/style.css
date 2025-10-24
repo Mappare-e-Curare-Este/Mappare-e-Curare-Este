@@ -252,3 +252,33 @@ html, body {
 .open-details-button:hover {
   background-color: #255c19;
 }
+
+/* --- Overlay di Conferma Uscita --- */
+#exitPrompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Sfondo scuro per focalizzare */
+  z-index: 10001; /* Sopra tutti gli altri overlay */
+  display: none; /* Inizialmente nascosto */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Indica che si può cliccare per chiudere */
+}
+
+#exitPrompt.visible {
+  display: flex;
+}
+
+#exitPrompt .overlay-content {
+  background-color: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 80%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out;
+}
