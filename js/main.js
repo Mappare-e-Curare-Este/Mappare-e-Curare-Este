@@ -620,66 +620,84 @@ function onLocationError(error) {
 
 // --- Gestione della Cronologia (Tasto 'Indietro') CORRETTA e COMPLETA ---
 window.onpopstate = () => {
-    // Chiude il prompt di uscita se è visibile e l'azione precedente era l'exit (hash rimosso)
+    // Variabili di stato aggiornate
+    const isTreeOverlayVisible = document.getElementById('treeOverlay').classList.contains('visible');
+    const isInfoOverlayVisible = document.getElementById('infoOverlay').classList.contains('visible');
+    const isMenuOpen = document.getElementById('treeListMenu').style.transform === 'translateX(0px)';
     const exitPrompt = document.getElementById('exitPrompt');
-    if (exitPrompt.classList.contains('visible') && location.hash !== '#exit') {
-        closeExitPrompt();
+    const isExitPromptVisible = exitPrompt.classList.contains('visible');
+    const isPopupOpen = map && map.getContainer().querySelector('.leaflet-popup-pane .leaflet-popup');
+    
+    // Condizione di "stato pulito" (nessun elemento UI aperto)
+    const isCleanState = !isTreeOverlayVisible && !isInfoOverlayVisible && !isMenuOpen && !isPopupOpen;
+
+    // =====================================================================
+    // 1. GESTIONE STATO #EXIT (Priorità Assoluta)
+    // =====================================================================
+    
+    // Se l'hash attuale è #exit E il prompt non è ancora visibile,
+    // significa che siamo appena entrati nello stato fittizio (prima pressione)
+    // e dovremmo mostrare il prompt subito, ignorando il resto della logica.
+    if (location.hash === '#exit' && !isExitPromptVisible) {
+        showExitPrompt();
         return;
     }
     
-    // 1. Chiusura del Menu
-    const treeListMenu = document.getElementById('treeListMenu');
-    const isMenuOpen = treeListMenu.style.transform === 'translateX(0px)';
+    // Se il prompt è visibile MA l'hash NON è #exit, significa che l'utente ha
+    // premuto 'Indietro' SUL PROMPT. Questo fa uscire dall'app. 
+    // Dobbiamo solo chiudere la UI visiva, e lasciare che il browser continui a uscire.
+    if (isExitPromptVisible && location.hash !== '#exit') {
+        closeExitPrompt(); 
+        // NON fare 'return' qui. Dobbiamo lasciare che il browser navighi indietro.
+    }
+    
+    // =====================================================================
+    // 2. CHIUSURA DEGLI ELEMENTI UI NORMALI (Ordine inverso di apertura)
+    // =====================================================================
 
+    // Chiudi il Menu (hash rimosso, elemento ancora aperto)
     if (isMenuOpen && location.hash !== '#menu-open') {
         closeMenu();
-        return;
+        return; 
     }
-
-    // 2. Chiusura dell'Overlay Dettaglio Albero
-    const treeOverlay = document.getElementById('treeOverlay');
-    const isTreeOverlayVisible = treeOverlay.classList.contains('visible');
-
+    // Chiudi l'Overlay Dettaglio Albero
     if (isTreeOverlayVisible && location.hash !== '#overlay') {
         closeOverlay();
-        return;
+        return; 
     }
-
-    // 3. Chiusura dell'Overlay Info
-    const infoOverlay = document.getElementById('infoOverlay');
-    const isInfoOverlayVisible = infoOverlay.classList.contains('visible');
-
+    // Chiudi l'Overlay Info
     if (isInfoOverlayVisible && location.hash !== '#info') {
         closeInfoOverlay();
         return;
     }
-    
-    // 4. Chiusura del Popup Marker
-    const isPopupOpen = map && map.getContainer().querySelector('.leaflet-popup-pane .leaflet-popup');
-
+    // Chiudi il Popup Marker
     if (isPopupOpen && location.hash !== '#popup') {
         map.closePopup();
         unhighlightLayers();
         return;
     }
     
-    // 5. INNESCO DEL PROMPT DI USCITA / Chiusura App
-    const isCleanState = !isTreeOverlayVisible && !isInfoOverlayVisible && !isMenuOpen && !isPopupOpen;
-    
-    if (isCleanState && !exitPrompt.classList.contains('visible')) {
-        // Siamo in uno stato pulito e l'utente ha premuto 'Indietro' per la prima volta.
-        if (location.hash.length === 0) {
-            // Stato pulito senza hash -> Mostra il prompt e aggiungi lo stato fittizio '#exit'.
-            showExitPrompt();
-            // Aggiunge lo stato fittizio, così la prossima pressione del tasto 'Indietro' esce dall'app.
-            window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
-        } 
+    // =====================================================================
+    // 3. INNESCO DEL PROMPT DI USCITA (Stato pulito -> Aggiungi #exit)
+    // =====================================================================
+
+    if (isCleanState && !isExitPromptVisible) {
+        // Siamo in uno stato pulito e l'hash è stato rimosso (o non c'era).
+        // Aggiungi lo stato fittizio '#exit' per catturare la seconda pressione.
+        window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
+        
+        // **IMPORTANTE**: Chiama showExitPrompt() solo dopo aver aggiunto lo stato.
+        // Se non lo facciamo in questo ordine, la logica del punto 1 non funzionerebbe.
+        showExitPrompt();
+        
         return; 
     }
     
-    // 6. Pulizia Finale (Se si torna a uno stato senza hash)
-    if (location.hash.length > 0 && isCleanState && !exitPrompt.classList.contains('visible')) {
-        window.history.replaceState(null, '', location.pathname);
+    // =====================================================================
+    // 4. PULIZIA FINALE (Rimuovi hash residui se siamo tornati a stato pulito)
+    // =====================================================================
+    if (location.hash.length > 0 && isCleanState && !isExitPromptVisible) {
+         window.history.replaceState(null, '', location.pathname);
     }
 };
 })();
