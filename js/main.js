@@ -19,7 +19,7 @@
   const PARK_BOUNDS = L.latLngBounds([[45.228, 11.654], [45.232, 11.660]]);
   const LOCATION_OPTIONS = {
       enableHighAccuracy: true,
-      timeout: 15000,
+      timeout: 25000,
       maximumAge: 0,
   };
 
@@ -456,13 +456,22 @@
 
 // Modificata per accettare l'oggetto 'error' del browser
 function onLocationError(error) {
-    // Usa 'error.message' invece di 'e.message'
-    console.error("Errore di geolocalizzazione:", error.message);
+    // Prima cosa: ferma il tentativo di tracciamento per evitare loop o chiamate inutili
     stopTracking(); 
-    // Puoi affinare l'alert in base all'errore
+
+    // Riferimento al pulsante
+    const gpsButton = document.getElementById('gpsButton');
+
+    // ⭐ ESSENZIALE: Resetta lo stato del pulsante in caso di errore
+    gpsButton.disabled = false; // Riattiva il pulsante per permettere un nuovo tentativo
+    gpsButton.textContent = '⚲ GPS Spento';
+    gpsButton.style.backgroundColor = '#006400cc'; // Colore base del pulsante spento
+
+    console.error("Errore di geolocalizzazione:", error.message);
+        
     const msg = (error.code === 1) ? 
         "Accesso alla posizione negato. Concedi i permessi." : 
-        "Impossibile trovare la tua posizione. Assicurati che il GPS sia attivo.";
+        "Impossibile trovare la tua posizione (Timeout). Assicurati che il GPS sia attivo.";
         
     alert(msg);
 }
@@ -635,22 +644,19 @@ window.onpopstate = () => {
     // 1. GESTIONE STATO #EXIT (Priorità Assoluta)
     // =====================================================================
     
-    // Se l'hash attuale è #exit E il prompt non è ancora visibile,
-    // significa che siamo appena entrati nello stato fittizio (prima pressione)
-    // e dovremmo mostrare il prompt subito, ignorando il resto della logica.
+    if (isExitPromptVisible && location.hash !== '#exit') {
+        // Chiude l'interfaccia visiva
+        closeExitPrompt(); 
+        // NON mettere 'return', lascia che il browser completi la navigazione (uscita dall'app).
+        return; 
+    }
+
+    // Se l'hash attuale è #exit E il prompt non è ancora visibile (dopo la prima pressione),
+    // significa che dobbiamo renderlo visibile.
     if (location.hash === '#exit' && !isExitPromptVisible) {
         showExitPrompt();
-        return;
+        return; 
     }
-    
-    // Se il prompt è visibile MA l'hash NON è #exit, significa che l'utente ha
-    // premuto 'Indietro' SUL PROMPT. Questo fa uscire dall'app. 
-    // Dobbiamo solo chiudere la UI visiva, e lasciare che il browser continui a uscire.
-    if (isExitPromptVisible && location.hash !== '#exit') {
-        closeExitPrompt(); 
-        // NON fare 'return' qui. Dobbiamo lasciare che il browser navighi indietro.
-    }
-    
     // =====================================================================
     // 2. CHIUSURA DEGLI ELEMENTI UI NORMALI (Ordine inverso di apertura)
     // =====================================================================
@@ -681,13 +687,11 @@ window.onpopstate = () => {
     // 3. INNESCO DEL PROMPT DI USCITA (Stato pulito -> Aggiungi #exit)
     // =====================================================================
 
-    if (isCleanState && !isExitPromptVisible) {
+      if (isCleanState && !isExitPromptVisible) {
         // Siamo in uno stato pulito e l'hash è stato rimosso (o non c'era).
-        // Aggiungi lo stato fittizio '#exit' per catturare la seconda pressione.
-        window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
         
-        // **IMPORTANTE**: Chiama showExitPrompt() solo dopo aver aggiunto lo stato.
-        // Se non lo facciamo in questo ordine, la logica del punto 1 non funzionerebbe.
+        // 🌳 Correzione: Prima aggiungiamo l'hash fittizio, poi mostriamo il prompt.
+        window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
         showExitPrompt();
         
         return; 
