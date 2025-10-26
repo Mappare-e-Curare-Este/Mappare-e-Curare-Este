@@ -404,10 +404,10 @@
   // =========================================================================
 
   function onLocationSuccess(e) {
-    const latlng = e.latlng;
-    const radius = e.accuracy / 2;
+    const latlng = L.latLng(position.coords.latitude, position.coords.longitude);
+    const radius = position.coords.accuracy;
     
-    // Rimuovi i layer precedenti se esistono
+// Rimuovi i layer precedenti se esistono
     if (gpsMarker) {
         map.removeLayer(gpsMarker);
     }
@@ -438,20 +438,34 @@
     // FlyTo solo al primo fix
     if (isInitialCenter) {
         const bounds = accuracyCircle.getBounds();
-        map.fitBounds(bounds, { maxZoom: 18, padding: [50, 50] });
+        // Usa una logica più robusta per evitare zoom eccessivi
+        let targetZoom = map.getZoom() > 18 ? map.getZoom() : 18;
+        if (radius < 50) targetZoom = 19; // Zoom più ravvicinato per alta precisione
+        if (radius > 100) targetZoom = 17; // Zoom più lontano per bassa precisione
+
+        map.flyTo(latlng, targetZoom, {
+             duration: 1.5
+        });
         isInitialCenter = false;
         
         document.getElementById('gpsButton').disabled = false;
         document.getElementById('gpsButton').textContent = '◉ GPS Attivo';
         document.getElementById('gpsButton').style.backgroundColor = '#00aaff';
     }
-  }
+}
 
-  function onLocationError(e) {
-    console.error("Errore di geolocalizzazione:", e.message);
+// Modificata per accettare l'oggetto 'error' del browser
+function onLocationError(error) {
+    // Usa 'error.message' invece di 'e.message'
+    console.error("Errore di geolocalizzazione:", error.message);
     stopTracking(); 
-    alert("Impossibile trovare la tua posizione. Assicurati che il GPS sia attivo e di aver concesso i permessi.");
-  }
+    // Puoi affinare l'alert in base all'errore
+    const msg = (error.code === 1) ? 
+        "Accesso alla posizione negato. Concedi i permessi." : 
+        "Impossibile trovare la tua posizione. Assicurati che il GPS sia attivo.";
+        
+    alert(msg);
+}
   
   function reCenterMap() {
       if (gpsMarker) {
@@ -591,10 +605,6 @@
               }
           }
       });
-
-      // Collega i gestori di eventi per la localizzazione (i vecchi erano in initMap)
-      map.on('locationfound', onLocationSuccess);
-      map.on('locationerror', onLocationError);
   }
 
 
@@ -609,62 +619,67 @@
   };
 
 // --- Gestione della Cronologia (Tasto 'Indietro') CORRETTA e COMPLETA ---
-  window.onpopstate = () => {
-      // Variabili di stato aggiornate (ri-calcolate per onpopstate)
-      const isTreeOverlayVisible = document.getElementById('treeOverlay').classList.contains('visible');
-      const isInfoOverlayVisible = document.getElementById('infoOverlay').classList.contains('visible');
-      const isMenuOpen = document.getElementById('treeListMenu').style.transform === 'translateX(0px)';
-      const isExitPromptVisible = document.getElementById('exitPrompt').classList.contains('visible');
-      
-      // Controlla se il popup è aperto
-      const isPopupOpen = map && map.getContainer().querySelector('.leaflet-popup-pane .leaflet-popup');
+window.onpopstate = () => {
+    // Chiude il prompt di uscita se è visibile e l'azione precedente era l'exit (hash rimosso)
+    const exitPrompt = document.getElementById('exitPrompt');
+    if (exitPrompt.classList.contains('visible') && location.hash !== '#exit') {
+        closeExitPrompt();
+        return;
+    }
+    
+    // 1. Chiusura del Menu
+    const treeListMenu = document.getElementById('treeListMenu');
+    const isMenuOpen = treeListMenu.style.transform === 'translateX(0px)';
 
-      // 1. GESTIONE CHIUSURA/APERTURA DEGLI STATI
-      
-      // Chiusura del Prompt di Uscita se l'utente ha annullato o se lo stato è cambiato
-      if (isExitPromptVisible && location.hash !== '#exit') {
-          closeExitPrompt(); 
-          return; 
-      }
-      
-      // Chiusura degli elementi: l'hash non corrisponde più allo stato aperto.
-      if (isMenuOpen && location.hash !== '#menu-open') {
-          closeMenu();
-          return; // Chiudi solo un elemento per volta
-      }
-      if (isTreeOverlayVisible && location.hash !== '#overlay') {
-          closeOverlay();
-          return; 
-      }
-      if (isInfoOverlayVisible && location.hash !== '#info') {
-          closeInfoOverlay();
-          return;
-      }
-      if (isPopupOpen && location.hash !== '#popup') {
-          map.closePopup();
-          unhighlightLayers();
-          return;
-      }
-      
-      // 2. GESTIONE USCITA DALLO STATO PULITO
-      
-      const isCleanState = !isTreeOverlayVisible && !isInfoOverlayVisible && !isMenuOpen && !isPopupOpen;
+    if (isMenuOpen && location.hash !== '#menu-open') {
+        closeMenu();
+        return;
+    }
 
-      if (isCleanState && !isExitPromptVisible) {
-          // Siamo in uno stato pulito.
-          if (location.hash.length === 0) {
-              // Stato pulito senza hash -> Mostra il prompt e aggiungi lo stato fittizio '#exit'.
-              showExitPrompt();
-              window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
-          } 
-          // Se l'hash è '#exit', non facciamo nulla, la successiva pressione di "Indietro" chiuderà l'app (comportamento nativo del browser).
-          return; 
-      }
-      
-      // 3. PULIZIA FINALE (Necessaria se la chiusura di un elemento ci ha lasciato con un hash indesiderato)
-      // Se l'elemento non è più visibile ma l'hash è ancora lì, torniamo indietro.
-      if (location.hash.length > 0 && isCleanState && !isExitPromptVisible) {
-           window.history.replaceState(null, '', location.pathname);
-      }
-  };
+    // 2. Chiusura dell'Overlay Dettaglio Albero
+    const treeOverlay = document.getElementById('treeOverlay');
+    const isTreeOverlayVisible = treeOverlay.classList.contains('visible');
+
+    if (isTreeOverlayVisible && location.hash !== '#overlay') {
+        closeOverlay();
+        return;
+    }
+
+    // 3. Chiusura dell'Overlay Info
+    const infoOverlay = document.getElementById('infoOverlay');
+    const isInfoOverlayVisible = infoOverlay.classList.contains('visible');
+
+    if (isInfoOverlayVisible && location.hash !== '#info') {
+        closeInfoOverlay();
+        return;
+    }
+    
+    // 4. Chiusura del Popup Marker
+    const isPopupOpen = map && map.getContainer().querySelector('.leaflet-popup-pane .leaflet-popup');
+
+    if (isPopupOpen && location.hash !== '#popup') {
+        map.closePopup();
+        unhighlightLayers();
+        return;
+    }
+    
+    // 5. INNESCO DEL PROMPT DI USCITA / Chiusura App
+    const isCleanState = !isTreeOverlayVisible && !isInfoOverlayVisible && !isMenuOpen && !isPopupOpen;
+    
+    if (isCleanState && !exitPrompt.classList.contains('visible')) {
+        // Siamo in uno stato pulito e l'utente ha premuto 'Indietro' per la prima volta.
+        if (location.hash.length === 0) {
+            // Stato pulito senza hash -> Mostra il prompt e aggiungi lo stato fittizio '#exit'.
+            showExitPrompt();
+            // Aggiunge lo stato fittizio, così la prossima pressione del tasto 'Indietro' esce dall'app.
+            window.history.pushState({ exit: true }, '', location.pathname + '#exit'); 
+        } 
+        return; 
+    }
+    
+    // 6. Pulizia Finale (Se si torna a uno stato senza hash)
+    if (location.hash.length > 0 && isCleanState && !exitPrompt.classList.contains('visible')) {
+        window.history.replaceState(null, '', location.pathname);
+    }
+};
 })();
