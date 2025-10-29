@@ -30,8 +30,60 @@
       },
       "geometry": {
         "coordinates": [
-          11.657484672947419,
-          45.230109001089204
+11.6577953, 45.2290593
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Cedro dell'Himalaya",
+        "Descrizione": "Cedrus deodara",
+        "Storia": "Il cedro dell’Himalaya (Cedrus deodara) è una conifera sempreverde originaria delle montagne dell’Asia meridionale, in particolare della catena himalayana, dove cresce fino a 3.000 metri di altitudine. È una delle specie di cedro più coltivate in Europa per il suo valore ornamentale, grazie al portamento elegante e alla resistenza al freddo, superiore a quella di altri cedri. In condizioni favorevoli può raggiungere i 40–50 metri di altezza, talvolta anche i 60. <br><br> Gli aghi sono lunghi 2–5 cm, sottili e flessibili, di colore verde chiaro o glauco, disposti a spirale sui rametti corti. I giovani rami, caratteristicamente penduli e arcuati, conferiscono alla pianta un aspetto maestoso e armonioso. <br><br> La corteccia nei primi anni è liscia e grigio chiaro, mentre con l’età tende a screpolarsi, diventando rugosa e di colore grigio scuro, talvolta con riflessi violacei. <br><br> Il nome del genere Cedrus deriva dal greco kedros, utilizzato per indicare alberi aromatici, mentre l’epiteto deodara proviene dal sanscrito devadāru, che significa “albero degli dèi”. Questo riflette il valore sacro attribuito alla specie nella tradizione indiana, dove era spesso venerata e utilizzata nei templi. <br><br> Il portamento è piramidale nei primi anni, con cima spesso pendula; con la maturità la chioma si allarga, assumendo forme più espanse e talvolta irregolari, pur mantenendo l’eleganza dei rami ricadenti.",
+        "image": "",
+        "raggio": 8
+      },
+      "geometry": {
+        "coordinates": [
+11.6583801, 45.2290801
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+     {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Cedro dell'Himalaya",
+        "Descrizione": "Cedrus deodara",
+        "Storia": "Il cedro dell’Himalaya (Cedrus deodara) è una conifera sempreverde originaria delle montagne dell’Asia meridionale, in particolare della catena himalayana, dove cresce fino a 3.000 metri di altitudine. È una delle specie di cedro più coltivate in Europa per il suo valore ornamentale, grazie al portamento elegante e alla resistenza al freddo, superiore a quella di altri cedri. In condizioni favorevoli può raggiungere i 40–50 metri di altezza, talvolta anche i 60. <br><br> Gli aghi sono lunghi 2–5 cm, sottili e flessibili, di colore verde chiaro o glauco, disposti a spirale sui rametti corti. I giovani rami, caratteristicamente penduli e arcuati, conferiscono alla pianta un aspetto maestoso e armonioso. <br><br> La corteccia nei primi anni è liscia e grigio chiaro, mentre con l’età tende a screpolarsi, diventando rugosa e di colore grigio scuro, talvolta con riflessi violacei. <br><br> Il nome del genere Cedrus deriva dal greco kedros, utilizzato per indicare alberi aromatici, mentre l’epiteto deodara proviene dal sanscrito devadāru, che significa “albero degli dèi”. Questo riflette il valore sacro attribuito alla specie nella tradizione indiana, dove era spesso venerata e utilizzata nei templi. <br><br> Il portamento è piramidale nei primi anni, con cima spesso pendula; con la maturità la chioma si allarga, assumendo forme più espanse e talvolta irregolari, pur mantenendo l’eleganza dei rami ricadenti.",
+        "image": "",
+        "raggio": 8
+      },
+      "geometry": {
+        "coordinates": [
+11.6583398, 45.2296938
+
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+     {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Cedro dell'Himalaya",
+        "Descrizione": "Cedrus deodara",
+        "Storia": "Il cedro dell’Himalaya (Cedrus deodara) è una conifera sempreverde originaria delle montagne dell’Asia meridionale, in particolare della catena himalayana, dove cresce fino a 3.000 metri di altitudine. È una delle specie di cedro più coltivate in Europa per il suo valore ornamentale, grazie al portamento elegante e alla resistenza al freddo, superiore a quella di altri cedri. In condizioni favorevoli può raggiungere i 40–50 metri di altezza, talvolta anche i 60. <br><br> Gli aghi sono lunghi 2–5 cm, sottili e flessibili, di colore verde chiaro o glauco, disposti a spirale sui rametti corti. I giovani rami, caratteristicamente penduli e arcuati, conferiscono alla pianta un aspetto maestoso e armonioso. <br><br> La corteccia nei primi anni è liscia e grigio chiaro, mentre con l’età tende a screpolarsi, diventando rugosa e di colore grigio scuro, talvolta con riflessi violacei. <br><br> Il nome del genere Cedrus deriva dal greco kedros, utilizzato per indicare alberi aromatici, mentre l’epiteto deodara proviene dal sanscrito devadāru, che significa “albero degli dèi”. Questo riflette il valore sacro attribuito alla specie nella tradizione indiana, dove era spesso venerata e utilizzata nei templi. <br><br> Il portamento è piramidale nei primi anni, con cima spesso pendula; con la maturità la chioma si allarga, assumendo forme più espanse e talvolta irregolari, pur mantenendo l’eleganza dei rami ricadenti.",
+        "image": "",
+        "raggio": 8
+      },
+      "geometry": {
+        "coordinates": [
+11.6578986, 45.2297724
+
         ],
         "type": "Point"
       },
@@ -52,7 +104,7 @@
       },
       "geometry": {
         "coordinates": [
-          11.65710,
+          11.6571,
           45.22959845893837
         ],
         "type": "Point"
@@ -88,8 +140,152 @@
       },
       "geometry": {
         "coordinates": [
-          11.6575,
-          45.22904
+          11.657731,
+          45.229236
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6578309,
+          45.2293203
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6576093,
+          45.2291906
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6575171,
+          45.2291299
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6574554,
+          45.2290941
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.657394,
+          45.2290511
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6573384,
+          45.2290336
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6587472,
+          45.2300664
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tiglio",
+        "Descrizione": "Tilia americana",
+        "Storia": "Il Tiglio è un albero deciduo originario di Europa, Asia occidentale e Nord America, coltivato da secoli per la sua bellezza e le sue proprietà officinali. La sua chioma è ampia e tondeggiante, ideale per fornire ombra, mentre le foglie, cuoriformi e alterne, presentano un margine seghettato e misurano dai 6 ai 15 cm, con un verde chiaro brillante. <br><br> Tra maggio e luglio il tiglio si riempie di fiori profumati, di colore giallo pallido o crema, riuniti in infiorescenze pendule molto apprezzate dalle api per la produzione di miele. I frutti, piccole noci tondeggianti e legnose di colore grigio-bruno, maturano verso la fine dell’estate e contengono semi commestibili in piccola quantità. <br><br> I fiori e le foglie del tiglio sono utilizzati nella medicina tradizionale europea per le loro proprietà calmanti, diaforetiche e antispasmodiche. Il nome del genere, Tilia, risale all’epoca romana e probabilmente deriva da termini indoeuropei legati alla fibra o alla corteccia, poiché quest’ultima veniva storicamente impiegata per ricavare materiali da intreccio. <br><br> Oggi il tiglio è molto diffuso come albero ornamentale nei viali cittadini e nei parchi, conferendo eleganza agli spazi verdi. Come molte altre piante arboree, il suo polline può provocare allergie, sebbene in misura generalmente minore rispetto ad altre specie.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6581105,
+          45.2294551
         ],
         "type": "Point"
       },
@@ -106,8 +302,8 @@
       },
       "geometry": {
         "coordinates": [
-          11.65791346483519,
-          45.22910570604512
+          11.6580471,
+          45.2291297
         ],
         "type": "Point"
       },
@@ -178,8 +374,8 @@
       },
       "geometry": {
         "coordinates": [
-          11.657464842568146,
-          45.228799005651524
+          11.6575288,
+          45.2287604
         ],
         "type": "Point"
       },
@@ -224,6 +420,50 @@
         "type": "Point"
       },
       "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tasso",
+        "Descrizione": "Taxus baccata",
+        "Storia": "Il tasso comune, appartenente alla famiglia delle Tassacee e al genere Taxus, è una conifera sempreverde capace di raggiungere 15–25 metri di altezza. La chioma, fitta e regolare, può estendersi fino a 10 metri di diametro, mentre il tronco, tozzo e ramificato fin dalla base, raramente supera 1 metro di diametro, ma in casi eccezionali può raggiungere dimensioni molto maggiori. <br><br>  Specie estremamente longeva, può vivere fino a 2.000 anni o più, quando le condizioni ambientali lo consentono. <br> Il tasso è una pianta sciafila (amante dell’ombra) e calcicola (predilige terreni ricchi di calcio). È diffuso in gran parte dell’Europa, e in Italia cresce nelle faggete e nelle abetine tra i 900 e i 1.800 metri di altitudine. Il genere Taxus è rappresentato anche in America settentrionale e in Asia, con 7–8 specie strettamente affini al tasso europeo. <br><br>  Il portamento del tasso è in genere piramidale, con rami divaricati e ramuli penduli. Le foglie, piatte e lineari, sono tenere e acute, di un verde scuro lucente sulla pagina superiore e con due bande più chiare su quella inferiore. <br><br>  Il tasso è una pianta dioica, cioè presenta individui maschili e femminili distinti. I semi, contenuti in un involucro carnoso e mucillaginoso di colore rosso vivo chiamato arillo (o urceolo), sono tossici, mentre l’arillo stesso è commestibile. <br><br>  Tutte le altre parti della pianta — in particolare foglie, corteccia e semi — contengono tassina, un alcaloide velenoso che in passato rese il tasso celebre come “albero della morte”. Nelle epoche medievali e rinascimentali era frequente trovarlo nei giardini nobiliari, dove veniva apprezzato sia per la sua bellezza ornamentale, sia per l’uso del veleno nelle lotte tra fazioni. <br><br>  Il legno del tasso, dal durame rosso porpora e alburno biancastro, è duro, pesante e pregiato, adatto al tornio, all’ebanisteria e alla scultura. Nonostante la sua tossicità, la tassina ha trovato impiego farmaceutico moderno: da essa si estraggono principi attivi usati nella chemioterapia, soprattutto nel trattamento dei tumori ovarici e mammari.",
+        "image": [
+          "images/Tasso/Tasso_1_web.jpg",
+          "images/Tasso/Tasso_2_web.jpg",
+          "images/Tasso/Tasso_3_web.jpg"
+        ],
+        "raggio": 10
+      },
+      "geometry": {
+        "coordinates": [
+          11.6585517,
+          45.229938
+        ],
+        "type": "Point"
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Tasso",
+        "Descrizione": "Taxus baccata",
+        "Storia": "Il tasso comune, appartenente alla famiglia delle Tassacee e al genere Taxus, è una conifera sempreverde capace di raggiungere 15–25 metri di altezza. La chioma, fitta e regolare, può estendersi fino a 10 metri di diametro, mentre il tronco, tozzo e ramificato fin dalla base, raramente supera 1 metro di diametro, ma in casi eccezionali può raggiungere dimensioni molto maggiori. <br><br>  Specie estremamente longeva, può vivere fino a 2.000 anni o più, quando le condizioni ambientali lo consentono. <br> Il tasso è una pianta sciafila (amante dell’ombra) e calcicola (predilige terreni ricchi di calcio). È diffuso in gran parte dell’Europa, e in Italia cresce nelle faggete e nelle abetine tra i 900 e i 1.800 metri di altitudine. Il genere Taxus è rappresentato anche in America settentrionale e in Asia, con 7–8 specie strettamente affini al tasso europeo. <br><br>  Il portamento del tasso è in genere piramidale, con rami divaricati e ramuli penduli. Le foglie, piatte e lineari, sono tenere e acute, di un verde scuro lucente sulla pagina superiore e con due bande più chiare su quella inferiore. <br><br>  Il tasso è una pianta dioica, cioè presenta individui maschili e femminili distinti. I semi, contenuti in un involucro carnoso e mucillaginoso di colore rosso vivo chiamato arillo (o urceolo), sono tossici, mentre l’arillo stesso è commestibile. <br><br>  Tutte le altre parti della pianta — in particolare foglie, corteccia e semi — contengono tassina, un alcaloide velenoso che in passato rese il tasso celebre come “albero della morte”. Nelle epoche medievali e rinascimentali era frequente trovarlo nei giardini nobiliari, dove veniva apprezzato sia per la sua bellezza ornamentale, sia per l’uso del veleno nelle lotte tra fazioni. <br><br>  Il legno del tasso, dal durame rosso porpora e alburno biancastro, è duro, pesante e pregiato, adatto al tornio, all’ebanisteria e alla scultura. Nonostante la sua tossicità, la tassina ha trovato impiego farmaceutico moderno: da essa si estraggono principi attivi usati nella chemioterapia, soprattutto nel trattamento dei tumori ovarici e mammari.",
+        "image": [
+          "images/Tasso/Tasso_1_web.jpg",
+          "images/Tasso/Tasso_2_web.jpg",
+          "images/Tasso/Tasso_3_web.jpg"
+        ],
+        "raggio": 10
+      },
+      "geometry": {
+        "coordinates": [
+          11.6584444,
+          45.229878
+        ],
+        "type": "Point"
+      },
+      "id": 13
     },
     {
       "type": "Feature",
@@ -279,10 +519,23 @@
         "raggio": 9
       },
       "geometry": {
-        "coordinates": [
-          11.657834479894461,
-          45.228600849500566
-        ],
+        "coordinates": [11.6577870, 45.2286402],
+        "type": "Point"
+      },
+      "id": 14
+    },
+        {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Carpino Bianco",
+        "Descrizione": "Carpinus betulus",
+        "Storia": "Il carpino bianco è un albero della famiglia delle Betulaceae, specie autoctona largamente diffusa in Europa centrale e sud-orientale fino al Caucaso, che si può trovare anche fino alla parte meridionale della penisola scandinava. In Italia è presente in tutte le regioni, tranne nelle isole. Si estende dalla pianura (insieme alla Farnia costituiva le foreste primarie che un tempo coprivano la Pianura Padana) al piano montano fino a 1000 metri di altitudine dove convive in genere con altre latifoglie come Querce, Faggi, Noccioli. Nelle strade, giardini e parchi di città i carpini bianchi sono presenti come alberi ornamentali utilizzati per filari ordinati e specialmente per formare siepi: sono infatti apprezzati per la loro resistenza alle potature e per le fitte chiome, che d'inverno mantengono le foglie secche ingiallite. Il carpino bianco è un albero di media altezza (può raggiungere i 25 m) e in questo parco ve ne sono 7 esemplari.<br><br> La chioma è densa, ampia e globosa e i rami tendenzialmente ascendenti danno all’albero una forma slanciata. Il fusto è spesso irregolare e scanalato (costolato): sulla corteccia sottile, liscia e grigio-brunastra con l’età iniziano ad apparire striature grigio-argentee e altre più chiare. Le foglie sono alterne, di forma ovato-oblunga con apice appuntito, hanno un margine a doppia dentatura e sono di colore verde intenso. Sono ben visibili le nervature parallele, in rilievo sulla pagina inferiore delle foglie. <br><br> I fiori sono riuniti in infiorescenze (dette “amenti”) che sbocciano a inizio primavera: quelli maschili sono penduli (fino a 12 cm) e giallastri, quelli femminili sono più corti, verdastri e all’apice dei rametti. I frutti maturano in autunno e sono acheni in cui i semi (come piccole noci) sono attaccati ad una brattea (piccola foglia) trilobata che ne facilita la dispersione mediante il vento. <br><br> Il nome potrebbe derivare dalle parole celtiche “car” (legno) e “pen” (testa) riferendosi al fatto che il suo legno veniva utilizzato per costruire i gioghi dei buoi da traino poiché particolarmente duro. Tuttavia il legno è poco resistente agli agenti esterni, soprattutto in ambienti umidi. Viene usato per produrre oggetti di piccole dimensioni (tra cui parti meccaniche per i pianoforti) ed è considerato un ottimo combustibile.",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [11.6578446, 45.2295037
+],
         "type": "Point"
       },
       "id": 14
@@ -303,7 +556,7 @@
         ],
         "type": "Point"
       },
-      "id": 15
+      "id": 17
     },
     {
       "type": "Feature",
@@ -321,7 +574,129 @@
         ],
         "type": "Point"
       },
-      "id": 16
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Pino",
+        "Descrizione": "Pinus Pinea",
+        "Storia": "Pino di prova",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6581182,
+          45.2295824
+        ],
+        "type": "Point"
+      },
+      "id": 19
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Pino",
+        "Descrizione": "Pinus Pinea",
+        "Storia": "Pino di prova",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+          11.6581762,
+          45.2297278
+        ],
+        "type": "Point"
+      },
+      "id": 20
+    },
+        {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Mirabolano var. Pissardii",
+        "Descrizione": "Prunus cerasifera",
+        "Storia": "Mirabolano Pissardi",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+11.6576291, 45.2294511
+
+        ],
+        "type": "Point"
+      },
+      "id": 21
+    },
+            {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Mirabolano var. Pissardii",
+        "Descrizione": "Prunus cerasifera",
+        "Storia": "Mirabolano Pissardi",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+11.6575533, 45.2294678
+
+
+        ],
+        "type": "Point"
+      },
+      "id": 21
+    },
+            {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Mirabolano var. Pissardii",
+        "Descrizione": "Prunus cerasifera",
+        "Storia": "Mirabolano Pissardi",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+11.6577410, 45.2294515
+
+
+        ],
+        "type": "Point"
+      },
+      "id": 21
+    },
+            {
+      "type": "Feature",
+      "properties": {
+        "Nome": "Mirabolano var. Pissardii",
+        "Descrizione": "Prunus cerasifera",
+        "Storia": "Mirabolano Pissardi",
+        "image": "",
+        "raggio": 9
+      },
+      "geometry": {
+        "coordinates": [
+11.6576787, 45.2294570
+
+
+        ],
+        "type": "Point"
+      },
+      "id": 21
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          11.657936057383154,
+          45.22902120817534
+        ],
+        "type": "Point"
+      }
     }
   ]
 }
