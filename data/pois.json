@@ -163,413 +163,468 @@
 
   ],
 
-  "features": [
+"features": [
     {
       "type": "Feature",
       "properties": {
-        "Nome": "Ippocastano"
+        "Nome": "Magnolia di Soulange",
+        "ID": 1
       },
       "geometry": {
-        "coordinates": [11.65691909333134, 45.23013099245918],
+        "coordinates": [
+          11.658108724422215,
+          45.22920565072023
+        ],
         "type": "Point"
-      },
-      "id": 0
-      },
-
-      {
-      "type": "Feature",
-      "properties": {
-        "Nome": "Cedro dell'Himalaya"
-      },
-      "geometry": {
-        "coordinates": [11.6577953, 45.2290593],
-        "type": "Point"
-      },
-      "id": 1
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Cedro dell'Himalaya"
+        "Nome": "Cedro dell'Himalaya",
+        "ID": 2
       },
       "geometry": {
-        "coordinates":[11.6583801, 45.2290801],
+        "coordinates": [
+          11.65834774717929,
+          45.2290508046706
+        ],
         "type": "Point"
-      },
-      "id": 1
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Cedro dell'Himalaya"
+        "Nome": "Cedro dell'Himalaya",
+        "ID": 3
       },
       "geometry": {
-        "coordinates": [11.6583398, 45.2296938],
+        "coordinates": [
+          11.6583398,
+          45.2296938
+        ],
         "type": "Point"
-      },
-      "id": 2
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Cedro dell'Himalaya"
+        "Nome": "Cedro dell'Himalaya",
+        "ID": 4
       },
       "geometry": {
-        "coordinates": [11.6578986, 45.2297724],
+        "coordinates": [
+          11.65789551877872,
+          45.22974744502528
+        ],
         "type": "Point"
-      },
-      "id": 3
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Sofora del Giappone"
+        "Nome": "Sofora del Giappone",
+        "ID": 5
       },
       "geometry": {
-        "coordinates": [11.6571,45.22959845893837],
+        "coordinates": [
+          11.6571,
+          45.22959845893837
+        ],
         "type": "Point"
-      },
-      "id": 4
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Olivo"
+        "Nome": "Olivo",
+        "ID": 6
       },
       "geometry": {
-        "coordinates": [11.657322, 45.23044],
+        "coordinates": [
+          11.657397489916356,
+          45.23043674504213
+        ],
         "type": "Point"
-      },
-      "id": 5
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 7
       },
       "geometry": {
-        "coordinates": [11.657731, 45.229236],
+        "coordinates": [
+          11.657749487326571,
+          45.229242510052686
+        ],
         "type": "Point"
-      },
-      "id": 6
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 8
       },
       "geometry": {
-        "coordinates": [11.6578309, 45.2293203],
+        "coordinates": [
+          11.657863252821677,
+          45.2292996848566
+        ],
         "type": "Point"
-      },
-      "id": 7
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 9
       },
       "geometry": {
-        "coordinates": [11.6576093, 45.2291906],
+        "coordinates": [
+          11.657663221368477,
+          45.22918951499002
+        ],
         "type": "Point"
-      },
-      "id": 8
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 10
       },
       "geometry": {
-        "coordinates": [11.6575171, 45.2291299],
+        "coordinates": [
+          11.65758026503132,
+          45.22913532505495
+        ],
         "type": "Point"
-      },
-      "id": 9
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 11
       },
       "geometry": {
-        "coordinates": [11.6574554, 45.2290941],
+        "coordinates": [
+          11.657513943199884,
+          45.22909409999798
+        ],
         "type": "Point"
-      },
-      "id": 10
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 12
       },
       "geometry": {
-        "coordinates": [11.657394, 45.2290511],
+        "coordinates": [
+          11.657449461979628,
+          45.229058695087765
+        ],
         "type": "Point"
-      },
-      "id": 11
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 13
       },
       "geometry": {
-        "coordinates": [11.6573384, 45.2290336],
+        "coordinates": [
+          11.657370752822729,
+          45.22902383488417
+        ],
         "type": "Point"
-      },
-      "id": 12
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 14
       },
       "geometry": {
-        "coordinates": [11.6587472, 45.2300664],
+        "coordinates": [
+          11.6587472,
+          45.2300664
+        ],
         "type": "Point"
-      },
-      "id": 13
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tiglio"
+        "Nome": "Tiglio",
+        "ID": 15
       },
       "geometry": {
-        "coordinates": [11.6581105, 45.2294551],
+        "coordinates": [
+          11.658093553283585,
+          45.22943122988875
+        ],
         "type": "Point"
-      },
-      "id": 14
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Magnolia di Soulange"
+        "Nome": "Acero Campestre",
+        "ID": 16
       },
       "geometry": {
-        "coordinates": [11.6580471, 45.2291297],
+        "coordinates": [
+          11.657763345658111,
+          45.22956555171345
+        ],
         "type": "Point"
-      },
-      "id": 15
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Acero Campestre"
+        "Nome": "Albero di Giuda",
+        "ID": 17
       },
       "geometry": {
-        "coordinates": [11.657763345658111, 45.22956555171345],
+        "coordinates": [
+          11.658536857266682,
+          45.23004635492498
+        ],
         "type": "Point"
-      },
-      "id": 16
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Albero di Giuda"
+        "Nome": "Bosso Comune",
+        "ID": 18
       },
       "geometry": {
-        "coordinates": [11.658536857266682, 45.23004635492498],
+        "coordinates": [
+          11.658013742400698,
+          45.22938768686595
+        ],
         "type": "Point"
-      },
-      "id": 17
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Bosso Comune"
+        "Nome": "Glicine",
+        "ID": 19
       },
       "geometry": {
-        "coordinates": [11.658007579958138, 45.22937900681612],
+        "coordinates": [
+          11.657527259389871,
+          45.228747379781794
+        ],
         "type": "Point"
-      },
-      "id": 18
+      }
     },
- 
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Glicine"
+        "Nome": "Evonimo",
+        "ID": 20
       },
       "geometry": {
-        "coordinates": [11.6575288, 45.2287604],
+        "coordinates": [
+          11.658335279964632,
+          45.228859354644186
+        ],
         "type": "Point"
-      },
-      "id": 19
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Evonimo"
+        "Nome": "Tasso",
+        "ID": 21
       },
       "geometry": {
-        "coordinates": [11.658335279964632, 45.228859354644186],
+        "coordinates": [
+          11.6585517,
+          45.229938
+        ],
         "type": "Point"
-      },
-      "id": 20
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tasso"
+        "Nome": "Tasso",
+        "ID": 22
       },
       "geometry": {
-        "coordinates": [11.6585517, 45.229938],
+        "coordinates": [
+          11.6584444,
+          45.229878
+        ],
         "type": "Point"
-      },
-      "id": 21
+      }
     },
-    
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Tasso"
+        "Nome": "Ginkgo Biloba",
+        "ID": 23
       },
       "geometry": {
-        "coordinates": [11.6584444, 45.229878],
+        "coordinates": [
+          11.65699155008977,
+          45.23031013381063
+        ],
         "type": "Point"
-      },
-      "id": 22
+      }
     },
-    
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Ginkgo Biloba"
+        "Nome": "Abete Greco",
+        "ID": 24
       },
       "geometry": {
-        "coordinates": [11.65698076581694, 45.23031121879873],
+        "coordinates": [
+          11.657354334271076,
+          45.23000281595873
+        ],
         "type": "Point"
-      },
-      "id": 23
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Abete Greco"
+        "Nome": "Carpino Bianco",
+        "ID": 25
       },
       "geometry": {
-        "coordinates": [11.65738976831409, 45.230006070941386],
+        "coordinates": [
+          11.657794703052689,
+          45.22863802995994
+        ],
         "type": "Point"
-      },
-      "id": 24
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Carpino Bianco"
+        "Nome": "Carpino Bianco",
+        "ID": 26
       },
       "geometry": {
-        "coordinates": [11.6577870, 45.2286402],
+        "coordinates": [
+          11.6578446,
+          45.2295037
+        ],
         "type": "Point"
-      },
-      "id": 25
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Carpino Bianco"
+        "Nome": "Pino",
+        "ID": 27
       },
       "geometry": {
-        "coordinates": [11.6578446, 45.2295037],
+        "coordinates": [
+          11.658152093431834,
+          45.22959325002208
+        ],
         "type": "Point"
-      },
-      "id": 26
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Pino"
+        "Nome": "Pino",
+        "ID": 28
       },
       "geometry": {
-        "coordinates": [11.6581182, 45.2295824],
+        "coordinates": [
+          11.65819160610529,
+          45.22973539499636
+        ],
         "type": "Point"
-      },
-      "id": 27
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Pino"
+        "Nome": "Mirabolano var. Pissardii",
+        "ID": 29
       },
       "geometry": {
-        "coordinates": [11.6581762, 45.2297278],
+        "coordinates": [
+          11.657633721830356,
+          45.229431569906374
+        ],
         "type": "Point"
-      },
-      "id": 28
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Mirabolano var. Pissardii"
+        "Nome": "Mirabolano var. Pissardii",
+        "ID": 30
       },
       "geometry": {
-        "coordinates": [11.6576291, 45.2294511],
+        "coordinates": [
+          11.657567165494111,
+          45.2294319948387
+        ],
         "type": "Point"
-      },
-      "id": 29
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Mirabolano var. Pissardii"
+        "Nome": "Mirabolano var. Pissardii",
+        "ID": 31
       },
       "geometry": {
-        "coordinates": [11.6575533, 45.2294678],
+        "coordinates": [
+          11.65774562183138,
+          45.22943305491355
+        ],
         "type": "Point"
-      },
-      "id": 30
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Mirabolano var. Pissardii"
+        "Nome": "Mirabolano var. Pissardii",
+        "ID": 32
       },
       "geometry": {
-        "coordinates": [11.6577410, 45.2294515],
+        "coordinates": [
+          11.65769102488404,
+          45.22943204488445
+        ],
         "type": "Point"
-      },
-      "id": 31
+      }
     },
-  
-      {
+    {
       "type": "Feature",
       "properties": {
-        "Nome": "Mirabolano var. Pissardii"
+        "Nome": "Ippocastano",
+        "ID": 33
       },
       "geometry": {
-        "coordinates": [11.6576787, 45.2294570],
+        "coordinates": [
+          11.656897524783517,
+          45.23013424743522
+        ],
         "type": "Point"
-      },
-      "id": 32
+      }
     }
   ]
     }
