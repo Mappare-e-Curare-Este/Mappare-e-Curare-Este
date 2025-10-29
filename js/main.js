@@ -23,6 +23,9 @@
 
   let exitPromptTimer = null;
 
+  let speciesLookup = new Map();
+  let featureLookup = new Map();
+
   // =========================================================================
   // II. FUNZIONI DI GESTIONE UI (Menu, Overlay, Info)
   // =========================================================================
@@ -51,30 +54,34 @@
 
   // Funzione per mostrare l'overlay con i dettagli dell'albero
   function openTreeOverlay(feature) {
+    const treeName = feature.properties.Nome;
+    const speciesDetails = speciesLookup.get(treeName) || feature.properties;
+
     document.getElementById('treeContent').scrollTop = 0;
     const treeDetails = document.getElementById('treeDetails');
     treeDetails.innerHTML = '';
 
     const title = document.createElement('h2');
-    title.textContent = feature.properties.Nome;
+    title.textContent = treeName;
     treeDetails.appendChild(title);
 
     const description = document.createElement('p');
-    description.innerHTML = '<b>Nome Scientifico:</b> ' + feature.properties.Descrizione;
+    description.innerHTML = '<b>Nome Scientifico:</b> ' + speciesDetails.Descrizione;
     treeDetails.appendChild(description);
 
     const treeHistory = document.createElement('p');
-    treeHistory.innerHTML = feature.properties.Storia || '';
+    treeHistory.innerHTML = speciesDetails.Storia || '';
     treeDetails.appendChild(treeHistory);
 
     const imageContainer = document.createElement('div');
     imageContainer.id = 'treeImageContainer';
 
-    if (feature.properties.image && feature.properties.image.length > 0) {
-      feature.properties.image.forEach(imgUrl => {
+    if (speciesDetails.image && speciesDetails.image.length > 0) {
+    const images = Array.isArray(speciesDetails.image) ? speciesDetails.image : [speciesDetails.image];
+      images.forEach(imgUrl => {
         const img = document.createElement('img');
         img.src = imgUrl;
-        img.alt = feature.properties.Nome;
+        img.alt = treeName;
         imageContainer.appendChild(img);
       });
     }
@@ -161,7 +168,7 @@
 
 function createEntranceIcon() {
     return L.icon({
-    iconUrl: 'images/Icon/location-pin.png', // Usa 'icons' al plurale e un nome file
+    iconUrl: 'images/icon/location-pin.png', // Usa 'icons' al plurale e un nome file
     iconSize: [32, 32], 
     iconAnchor: [16, 32], 
     popupAnchor: [0, -30] 
@@ -209,6 +216,13 @@ function addEntranceMarkers(map) {
       maxBoundsViscosity: 1.0
     }).setView([45.2286, 11.6574], 17);
 
+    if (geojsonPois.speciesCatalog) {
+        geojsonPois.speciesCatalog.forEach(species => {
+            // Usa il Nome della specie come chiave
+            speciesLookup.set(species.Nome, species);
+        });
+    }
+
     // ... (Logica dei Layer e Overlay Pane come prima)
     map.createPane('osmPane');
     map.getPane('osmPane').style.zIndex = 600;
@@ -238,6 +252,12 @@ function addEntranceMarkers(map) {
     // ... (Logica del Park GeoJSON come prima)
     const parkFeature = geojsonPois.features.find(f => f.geometry.type === "Polygon");
     const pointFeatures = geojsonPois.features.filter(f => f.geometry.type === "Point");
+
+    // 🌳 CORREZIONE CRITICA 1: Popola la featureLookup correttamente
+    // Questa riga era errata: pointFeatures = geojsonPois.feature.find(feature => { ... });
+    pointFeatures.forEach(feature => {
+      featureLookup.set(feature.id, feature);
+    });
 
     if (parkFeature) {
       const parkCoordinates = parkFeature.geometry.coordinates[0];
@@ -315,9 +335,10 @@ function addEntranceMarkers(map) {
     // 4. Crea i Marker
     pointFeatures.forEach(feature => {
       const latlng = [feature.geometry.coordinates[1], feature.geometry.coordinates[0]];
-      const radiusAtZoom18 = feature.properties.raggio || 8;
       const treeName = feature.properties.Nome;
-      
+      const speciesDetails = speciesLookup.get(treeName);
+      const radiusAtZoom18 = (speciesDetails && speciesDetails.raggio) ? speciesDetails.raggio : 8;
+
       const popupContent = `
         <div class="tree-popup">
           <h3 class="popup-title">${treeName}</h3>
@@ -358,21 +379,10 @@ function addEntranceMarkers(map) {
         highlightedLayers.push(this); 
         
         this.openPopup();
-        // 🌳 CORREZIONE: Aggiungi un nuovo stato per permettere la chiusura con 'Indietro'
+        // 🌳 Aggiungi un nuovo stato per permettere la chiusura con 'Indietro'
         window.history.pushState(null, '', location.pathname + '#popup');
 
-        setTimeout(() => {
-            // Usa l'ID del feature per trovare il pulsante corretto nel popup
-            const openButton = document.querySelector(`.open-details-button[data-feature-id="${feature.id}"]`);
-            if (openButton) {
-                // 🌳 CORREZIONE: Questa funzione è corretta: chiude popup, pulisce highlight e apre overlay (#overlay)
-                openButton.onclick = () => {
-                    this.closePopup();
-                    unhighlightLayers(); 
-                    openTreeOverlay(feature); 
-                };
-            }
-        }, 50); 
+        // ❌ LOGICA REMOSSA: Il click sul pulsante è gestito dal listener globale in setupEventListeners
       });
       
       markers.addLayer(treeCircle);
@@ -419,16 +429,7 @@ function addEntranceMarkers(map) {
                  layer.openPopup();
                  window.history.pushState(null, '', location.pathname + '#popup'); // Aggiunto hash per popup automatico
                 
-                 setTimeout(() => {
-                    const openButton = document.querySelector(`.open-details-button[data-feature-id="${firstFeature.id}"]`);
-                    if (openButton) {
-                        openButton.onclick = () => {
-                            layer.closePopup();
-                            unhighlightLayers(); 
-                            openTreeOverlay(firstFeature); 
-                        };
-                    }
-                }, 50);
+                 // ❌ LOGICA REMOSSA: Il click sul pulsante è gestito dal listener globale in setupEventListeners
             }
         }
       });
@@ -573,6 +574,31 @@ function addEntranceMarkers(map) {
           gpsButton.addEventListener('click', getOneTimeLocation);
       }
       
+      // 🌳 CORREZIONE CRITICA 3: Gestore click globale per il pulsante nel popup (Event Delegation)
+      document.addEventListener('click', function(e) {
+        if (e.target && e.target.matches('.open-details-button')) {
+            e.preventDefault(); 
+            
+            // 1. Recupera l'ID e cerca la feature
+            const featureId = parseInt(e.target.dataset.featureId);
+            const feature = featureLookup.get(featureId);
+            
+            if (feature) {
+                // 2. Chiude il popup e pulisce lo stato
+                map.closePopup();
+                if (location.hash.includes('#popup')) {
+                    window.history.replaceState(null, '', location.pathname);
+                }
+                
+                // 3. Apre l'overlay della scheda
+                unhighlightLayers(); 
+                openTreeOverlay(feature); 
+            } else {
+                console.error('Feature non trovata con ID:', featureId);
+            }
+        }
+      });
+
       // Listener Menu
       menuButton.addEventListener('click', () => {
           if (treeListMenu.style.transform === 'translateX(0px)') {
@@ -585,7 +611,7 @@ function addEntranceMarkers(map) {
               openMenu();
           }
       });
-      
+
       // Listener Info Overlay
       infoButton.addEventListener('click', openInfoOverlay);
       document.querySelector('#infoOverlay .close-button').addEventListener('click', () => {
@@ -725,4 +751,3 @@ window.onpopstate = () => {
     }
 };
 })();
-
