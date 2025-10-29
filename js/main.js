@@ -161,7 +161,7 @@
 
 function createEntranceIcon() {
     return L.icon({
-    iconUrl: 'images/icon/location-pin.png', // Usa 'icons' al plurale e un nome file
+    iconUrl: 'images/Icon/location-pin.png', // Usa 'icons' al plurale e un nome file
     iconSize: [32, 32], 
     iconAnchor: [16, 32], 
     popupAnchor: [0, -30] 
@@ -725,3 +725,4 @@ window.onpopstate = () => {
     }
 };
 })();
+
