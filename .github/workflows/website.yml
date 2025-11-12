@@ -1,0 +1,53 @@
+name: Publish Website
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Website Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: create destination folders
+        run: |
+          mkdir out
+          mkdir out/CSS
+          mkdir out/data
+          mkdir out/images
+          mkdir out/js
+      - name: Copy Files Into Destination Folders
+        run: |
+          cp -a ./CSS ./out/
+          cp -a ./data ./out/
+          cp -a ./images ./out/
+          cp -a ./js ./out/
+          cp ./index.html ./out/
+          cp ./map.html ./out/
+      - name: Upload Website Artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./out"
+  setup:
+    name: Setup GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+  deploy:
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: [build, setup]
+    steps:
+      - name: Upload website files
+        id: deployment
+        uses: actions/deploy-pages@v4
