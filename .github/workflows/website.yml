@@ -25,6 +25,7 @@ jobs:
           cp -a ./images ./out/
           cp -a ./js ./out/
           cp ./index.html ./out/
+          cp ./index2.html ./out/
           cp ./map.html ./out/
       - name: Upload Website Artifact
         if: github.ref == 'refs/heads/main'
